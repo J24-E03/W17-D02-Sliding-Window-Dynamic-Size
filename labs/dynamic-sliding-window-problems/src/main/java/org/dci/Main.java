@@ -24,7 +24,7 @@ public class Main {
         System.out.println("Max Consecutive Ones: " + result2);
     }
 
-    private static int findMaxConsecutiveOnes(int[] binaryArray, int k) {
+    static int findMaxConsecutiveOnes(int[] binaryArray, int k) {
         int maxSubArrayLength = 0;
         int windowStart = 0;
         int zeroCounter = 0;
@@ -59,7 +59,7 @@ public class Main {
         System.out.println("Longest SubArray with at most 3 distinct integers: " + result2);
     }
 
-    private static int findLongestSubArrayKDistinct(int[] nums, int k) {
+    static int findLongestSubArrayKDistinct(int[] nums, int k) {
         int maxSubArrayLength = 0;
         int windowStart = 0;
         Map<Integer, Integer> numbers = new HashMap<>();
