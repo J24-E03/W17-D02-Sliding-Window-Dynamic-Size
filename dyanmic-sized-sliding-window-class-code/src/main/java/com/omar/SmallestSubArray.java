@@ -1,5 +1,7 @@
 package com.omar;
 
+import java.util.HashSet;
+
 public class SmallestSubArray {
 //    Problem: find the smallest sub array within a given array that is greater than or equal to a given number sum
 
@@ -33,7 +35,27 @@ public class SmallestSubArray {
         int[] testNums = {1,3,2,5,7,2,10};
         System.out.println(String.format("%d is the minimum window length",smallestsubArray(8,testNums)));
 
+        System.out.printf("%d is the biggest unique substring in this string%n",maxUniqueSubString("abcabeace"));
+    }
 
+    public static int maxUniqueSubString(String s){
+        int maxSubString = 0;
+        HashSet<Character> set = new HashSet<>();
+        int windowStart = 0;
+
+        for(int windowEnd = 0; windowEnd<s.length(); windowEnd++){
+
+
+            while(set.contains(s.charAt(windowEnd))){
+                set.remove(s.charAt(windowStart));
+                windowStart+= 1;
+            }
+
+            maxSubString = Math.max(maxSubString, windowEnd-windowStart + 1);
+
+            set.add(s.charAt(windowEnd));
+        }
+        return maxSubString;
     }
 
 }
