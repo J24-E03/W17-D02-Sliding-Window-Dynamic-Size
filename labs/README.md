@@ -11,45 +11,34 @@ In this lab, you will implement two **dynamic sliding window** problems in Java.
 
 ---
 
-## **Problem 1: Longest Repeating Character Replacement**
+## Problem 1: Max Consecutive Ones with Flips
 
-### **Problem Statement**
-You are given a string `s` and an integer `k`. You can choose **any character** in the string and change it to any other uppercase English letter. You can perform this operation **at most `k` times**.
+Given a binary array `nums` and an integer `k`, return the maximum number of consecutive `1`s in the array if you can flip at most `k` `0`s.
 
-Return the length of the **longest contiguous substring** containing the same character after performing the operations.
+### Example 1:
+**Input:**  
+`nums = [1,1,1,0,0,0,1,1,1,1,0]`, `k = 2`  
 
-### **Example 1:**
-**Input:**
-```java
-s = "AABABBA", k = 1;
-```
-**Output:**
-```java
-4
-```
-**Explanation:**
-After changing one `'B'` to `'A'`, the longest contiguous substring is **"AAAA"**.
+**Output:**  
+`6`  
 
-### **Example 2:**
-**Input:**
-```java
-s = "ABAB", k = 2;
-```
-**Output:**
-```java
-4
-```
-**Explanation:**
-We can change both `'B'` to `'A'`, making **"AAAA"**.
+**Explanation:**  
+After flipping at most `k = 2` zeros, the longest contiguous subarray of `1`s is:  
+`[1,1,1,0,0,1,1,1,1,1,1]`  
+(*Bolded numbers were flipped from `0` to `1`.*)
 
-### **Constraints:**
-- `1 ≤ s.length ≤ 10^5`
-- `s` contains only uppercase English letters.
-- `0 ≤ k ≤ s.length`
+### Example 2:
+**Input:**  
+`nums = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1]`, `k = 3`  
 
-### **Hints:**
-- Use a **HashMap or array** to track the count of characters in the current window.
-- Try expanding the window and **shrink it only when needed**.
+**Output:**  
+`10`  
+
+**Explanation:**  
+After flipping at most `k = 3` zeros, the longest contiguous subarray of `1`s is:  
+`[0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1]`  
+(*Bolded numbers were flipped from `0` to `1`.*)
+
 
 ---
 
